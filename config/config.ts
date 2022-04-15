@@ -20,7 +20,7 @@ export default defineConfig({
   },
   routes,
   fastRefresh: {},
-  title: false,
+  title: "React with umijs",
   metas: [
     {
       name: "keywords",
