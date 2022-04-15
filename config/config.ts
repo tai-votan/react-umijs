@@ -42,4 +42,5 @@ export default defineConfig({
       pathRewrite: { "^/api": "" },
     },
   },
+  favicon: "/favicon.ico",
 });
