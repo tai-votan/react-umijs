@@ -17,9 +17,7 @@ function IndexPage() {
   };
 
   const handleResetCount = () => {
-    dispatch({
-      type: "home/resetCount",
-    });
+    dispatch({ type: "home/resetCount" });
   };
 
   return (
