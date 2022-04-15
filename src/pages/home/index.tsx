@@ -1,4 +1,4 @@
-import { Alert, Button, Badge } from "antd";
+import { Alert, Button } from "antd";
 import { useDispatch, useIntl } from "umi";
 import { useAppSelector } from "@/hooks";
 
@@ -16,9 +16,7 @@ function IndexPage() {
     });
   };
 
-  const handleResetCount = () => {
-    dispatch({ type: "home/resetCount" });
-  };
+  const handleResetCount = () => dispatch({ type: "home/resetCount" });
 
   return (
     <>
