@@ -14,6 +14,7 @@ export const request: RequestConfig = {
     (url, options) => {
       console.log(`Func: url, options - PARAMS: url, options`, {
         url,
+        urls: url,
         options,
       });
       if (options.showLoading && isBrowser()) {
