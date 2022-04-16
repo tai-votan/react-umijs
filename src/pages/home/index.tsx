@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "umi";
+import classNames from "classnames";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import { useAppSelector } from "@/hooks";
@@ -45,7 +46,9 @@ function IndexPage() {
         hasMore
         loader={false}
         endMessage={false}
-        className="bg-white border border-solid border-slate-200 rounded-t-md divide-y"
+        className={classNames("bg-white rounded-t-md divide-y", {
+          "border border-solid border-slate-200": posts.length,
+        })}
       >
         {posts.map((post) => (
           <ArticleItem {...post} key={post._id} />
