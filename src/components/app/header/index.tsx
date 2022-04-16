@@ -7,9 +7,9 @@ import { Input } from "@/components/common";
 export const Header = () => {
   return (
     <div className="bg-white py-3 shadow-[0_1px_2px_0_rgba(0,0,0,0.08)]">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-2">
         <div className="grid grid-cols-8 gap-x-4 items-center">
-          <div className="col-span-1">
+          <div className="col-span-2 xl:col-span-1">
             <Link to={"/"} className={"text-current"}>
               <svg viewBox="0 0 688 118" fill="none" className={"fill-current"}>
                 <path
@@ -25,7 +25,7 @@ export const Header = () => {
               </svg>
             </Link>
           </div>
-          <div className="col-span-5">
+          <div className="col-span-4 xl:col-span-5">
             <Input
               placeholderId={"Search for tags, people, articles, and many more"}
             />
