@@ -1,5 +1,5 @@
 import type { RequestConfig } from "umi";
-import { getDvaApp, isBrowser } from "umi";
+import { getDvaApp } from "umi";
 
 const timeout = 30 * 1000;
 // Config umi request
@@ -12,13 +12,6 @@ export const request: RequestConfig = {
   redirect: "manual",
   requestInterceptors: [
     (url, options) => {
-      console.log(`Func: url, options - PARAMS: url, options`, {
-        url,
-        options,
-      });
-      if (options.showLoading && isBrowser()) {
-        // showLoading();
-      }
       return {
         url,
         options,
@@ -27,7 +20,6 @@ export const request: RequestConfig = {
   ],
   responseInterceptors: [
     (response) => {
-      console.log(`Func: response - PARAMS: response`, response);
       if (response.status === 404) {
         // logger.error('API error:', response);
         // helper.handle404Error();

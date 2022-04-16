@@ -1,30 +1,28 @@
 import type { IHome, IHomeModel } from "@/interfaces/models/home";
 import { getFeeds } from "@/services/feed";
+import type { AppStates } from "@/interfaces";
 
 const initState: IHome = {
-  count: 0,
+  posts: [],
 };
 
 const MainModel: IHomeModel = {
   namespace: "home",
   state: initState,
   effects: {
-    *updateCount({ payload }, { put, call }) {
+    *getFeeds({ payload }, { put, call, select }) {
+      const res = yield call(getFeeds, payload);
+      const { posts } = yield select(({ home }: AppStates) => home);
+      let postResponse = posts.concat(res.posts);
+      if (payload.page === 1) {
+        postResponse = res.posts;
+      }
       yield put({
         type: "updateState",
         payload: {
-          count: payload.count,
+          posts: postResponse,
         },
       });
-      console.log(`Func: updateCount - PARAMS: payload`, payload);
-      const params = {
-        page: payload.count,
-      };
-      const res = yield call(getFeeds, params);
-      console.log(`Func: updateCount - PARAMS: res`, res);
-    },
-    *resetCount(_, { put }) {
-      yield put({ type: "clearState" });
     },
   },
   reducers: {
