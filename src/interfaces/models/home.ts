@@ -1,15 +1,15 @@
-import { Effect, Reducer } from "umi";
+import type { Effect, Reducer } from "umi";
+import type { IFeed } from "@/interfaces";
 
 export interface IHome {
-  count: number;
+  posts: IFeed[];
 }
 
 export interface IHomeModel {
   namespace: string;
   state: IHome;
   effects: {
-    updateCount: Effect;
-    resetCount: Effect;
+    getFeeds: Effect;
   };
   reducers: {
     updateState: Reducer<IHome>;

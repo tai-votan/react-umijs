@@ -5,7 +5,7 @@ const { API_URL } = process.env;
 
 export default defineConfig({
   hash: true,
-  antd: false,
+  // antd: false,
   dva: {
     hmr: true,
   },
@@ -25,15 +25,6 @@ export default defineConfig({
     {
       name: "theme-color",
       content: "#FFBA00",
-    },
-    {
-      property: "og:title",
-      content: "Mercedes_C200 model 2017 - 87663971",
-    },
-    {
-      property: "og:image",
-      content:
-        "https://cdn.chotot.com/U4lgfrr37EwcgdhfxLgss_L47WaVAYfh9dLYM_4BMGg/preset:view/plain/6a98423896df4cc8508d07ba728c8313-2729897535706875096.jpg",
     },
     {
       name: "title",
