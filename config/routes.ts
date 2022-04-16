@@ -9,10 +9,10 @@ export default [
         title: "site.title",
         component: "@/pages/home",
       },
-      {
-        title: "404",
-        component: "@/pages/404",
-      },
+      // {
+      //   title: "404",
+      //   component: "@/pages/404",
+      // },
     ],
   },
   {
