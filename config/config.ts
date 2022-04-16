@@ -20,7 +20,7 @@ export default defineConfig({
   },
   routes,
   fastRefresh: {},
-  // title: "React with umijs",
+  title: "React with umijs",
   metas: [
     {
       name: "theme-color",
