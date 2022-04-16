@@ -20,15 +20,37 @@ export default defineConfig({
   },
   routes,
   fastRefresh: {},
-  title: "React with umijs",
+  // title: "React with umijs",
   metas: [
+    {
+      name: "theme-color",
+      content: "#FFBA00",
+    },
+    {
+      property: "og:url",
+      content:
+        "https://xe.chotot.com/mua-ban-oto-quan-ha-dong-ha-noi/87663971.htm",
+    },
+    {
+      property: "og:title",
+      content: "og: Mercedes_C200 model 2017 - 87663971",
+    },
+    {
+      property: "og:image",
+      content: "http://localhost:8888",
+    },
+    {
+      name: "title",
+      content: "title Mercedes_C200 model 2017 - 87663971",
+    },
     {
       name: "keywords",
       content: "umi, umijs",
     },
     {
       name: "description",
-      content: "🍙 插件化的企业级前端应用框架。",
+      content:
+        "Cần bán gấp Chiếc xe Mercedes C200 model 2017  Màu trắng nội thất đen  Đã đi 40.000 km  Chính chủ sử dụng giữ gìn Full lịch sử bảo dưỡng tại hãng  Đã độ vành c3 - 87663971",
     },
   ],
   nodeModulesTransform: { type: "none" },
