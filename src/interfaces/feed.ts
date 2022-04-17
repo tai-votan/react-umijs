@@ -8,6 +8,6 @@ export interface IFeed {
   coverImage?: string;
   slug: string;
   title: string;
-  readTime: number;
+  views: number;
   _id: string;
 }

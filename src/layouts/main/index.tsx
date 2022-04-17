@@ -4,7 +4,7 @@ import { Header } from "@/components/app";
 const MainLayout: React.FC = (props) => {
   const { children } = props;
   return (
-    <div className="bg-slate-50 h-screen">
+    <div className="bg-slate-50 min-h-screen">
       <Header />
       <div className={"container mx-auto mt-4 px-2"}>
         <div className="grid grid-cols-8 gap-x-4 items-center">

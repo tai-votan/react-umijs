@@ -6,7 +6,7 @@ import type { IFeed } from "@/interfaces";
 export const ArticleItem = (props: IFeed) => {
   const { formatMessage, formatPlural } = useIntl();
 
-  const { author, title, brief, coverImage, readTime } = props;
+  const { author, title, brief, coverImage, views } = props;
   return (
     <article className="p-5 space-y-4 border-solid border-slate-200">
       <div className="flex items-center space-x-2">
@@ -18,7 +18,7 @@ export const ArticleItem = (props: IFeed) => {
             {author.name}
           </div>
           <span className="text-xs text-gray-500">
-            {formatMessage({ id: formatPlural(readTime) }, { min: readTime })}
+            {formatMessage({ id: formatPlural(views) }, { view: views })}
           </span>
         </div>
       </div>
