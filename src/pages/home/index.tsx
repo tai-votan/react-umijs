@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "umi";
 import classNames from "classnames";
+import { Skeleton } from "antd";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import { useAppSelector } from "@/hooks";
@@ -44,7 +45,38 @@ function IndexPage() {
         dataLength={posts.length}
         next={loadMoreFeed}
         hasMore
-        loader={false}
+        loader={
+          <>
+            <Skeleton
+              className={"p-5 space-y-4 border-solid border-slate-200"}
+              active
+              round
+              avatar
+              paragraph={{ rows: 4 }}
+            />
+            <Skeleton
+              className={"p-5 space-y-4 border-solid border-slate-200"}
+              active
+              round
+              avatar
+              paragraph={{ rows: 4 }}
+            />
+            <Skeleton
+              className={"p-5 space-y-4 border-solid border-slate-200"}
+              active
+              round
+              avatar
+              paragraph={{ rows: 4 }}
+            />
+            <Skeleton
+              className={"p-5 space-y-4 border-solid border-slate-200"}
+              active
+              round
+              avatar
+              paragraph={{ rows: 4 }}
+            />
+          </>
+        }
         endMessage={false}
         className={classNames("bg-white rounded-t-md divide-y", {
           "border border-solid border-slate-200": posts.length,

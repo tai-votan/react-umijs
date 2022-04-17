@@ -2,6 +2,7 @@ import React from "react";
 import { Avatar } from "antd";
 import { useIntl } from "umi";
 import type { IFeed } from "@/interfaces";
+import { UserOutlined } from "@ant-design/icons";
 
 export const ArticleItem = (props: IFeed) => {
   const { formatMessage, formatPlural } = useIntl();
@@ -11,7 +12,7 @@ export const ArticleItem = (props: IFeed) => {
     <article className="p-5 space-y-4 border-solid border-slate-200">
       <div className="flex items-center space-x-2">
         <div className="text-sm font-medium rounded-full border border-solid border-slate-200 leading-3 flex overflow-hidden">
-          <Avatar src={author.photo} size={40} />
+          <Avatar src={author.photo} size={40} icon={<UserOutlined />} />
         </div>
         <div className="flex flex-col leading-snug">
           <div className="text-sm font-medium text-current hover:text-current">

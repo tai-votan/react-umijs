@@ -44,5 +44,5 @@ export default defineConfig({
     API_URL,
     NODE_ENV,
   },
-  favicon: "/favicon.ico",
+  favicon: "/favicon.png",
 });

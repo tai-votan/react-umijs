@@ -4,5 +4,6 @@ module.exports = {
     page: true,
     REACT_APP_ENV: true,
     API_URL: true,
+    NODE_ENV: true,
   },
 };
