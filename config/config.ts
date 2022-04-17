@@ -46,7 +46,7 @@ export default defineConfig({
       content: "React, umijs, tailwindcss, antd",
     },
     {
-      property: "og:image:secure_url",
+      property: "og:image",
       content:
         "https://cdn.hashnode.com/res/hashnode/image/upload/v1644938661983/J7uY6EVhp.png?auto=compress",
     },
