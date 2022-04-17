@@ -10,7 +10,7 @@ export const Header = () => {
       <div className="container mx-auto px-2">
         <div className="grid grid-cols-8 gap-x-4 items-center">
           <div className="col-span-2 xl:col-span-1">
-            <Link to={"/"} className={"text-current"}>
+            <Link to={"/"} className={"text-current hover:text-current"}>
               <svg viewBox="0 0 688 118" fill="none" className={"fill-current"}>
                 <path
                   fillRule="evenodd"

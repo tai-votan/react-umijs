@@ -1,11 +1,10 @@
 import { defineConfig } from "umi";
 import routes from "./routes";
 
-const { API_URL } = process.env;
+const { API_URL, NODE_ENV } = process.env;
 
 export default defineConfig({
   hash: true,
-  // antd: false,
   dva: {
     hmr: true,
   },
@@ -43,12 +42,7 @@ export default defineConfig({
   nodeModulesTransform: { type: "none" },
   define: {
     API_URL,
-  },
-  proxy: {
-    "/api": {
-      target: API_URL,
-      changeOrigin: true,
-    },
+    NODE_ENV,
   },
   favicon: "/favicon.ico",
 });

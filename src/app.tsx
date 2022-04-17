@@ -3,6 +3,7 @@ import { getDvaApp } from "umi";
 
 const timeout = 30 * 1000;
 // Config umi request
+console.log(`Func: process.env - PARAMS: process.env`, process.env);
 export const request: RequestConfig = {
   timeout,
   timeoutMessage: `RequestError: timeout of ${timeout}ms exceeded`,
@@ -12,8 +13,10 @@ export const request: RequestConfig = {
   redirect: "manual",
   requestInterceptors: [
     (url, options) => {
+      const apiURL =
+        process.env.NODE_ENV === "development" ? url : API_URL + url;
       return {
-        url,
+        url: apiURL,
         options,
       };
     },
