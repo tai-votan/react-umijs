@@ -19,7 +19,7 @@ export default defineConfig({
   },
   routes,
   fastRefresh: {},
-  title: "React with umijs",
+  title: "React, umijs, tailwindcss, antd",
   metas: [
     {
       name: "theme-color",
@@ -27,16 +27,46 @@ export default defineConfig({
     },
     {
       name: "title",
-      content: "title Mercedes_C200 model 2017 - 87663971",
+      content: "React, umijs, tailwindcss, antd",
     },
     {
       name: "keywords",
-      content: "umi, umijs",
+      content: "umi, umijs, react, tailwindcss, antd",
     },
     {
       name: "description",
+      content: "React, umijs, tailwindcss, antd template",
+    },
+    {
+      property: "og:type",
+      content: "website",
+    },
+    {
+      property: "og:title",
+      content: "React, umijs, tailwindcss, antd",
+    },
+    {
+      property: "og:image:secure_url",
       content:
-        "Cần bán gấp Chiếc xe Mercedes C200 model 2017  Màu trắng nội thất đen  Đã đi 40.000 km  Chính chủ sử dụng giữ gìn Full lịch sử bảo dưỡng tại hãng  Đã độ vành c3 - 87663971",
+        "https://cdn.hashnode.com/res/hashnode/image/upload/v1644938661983/J7uY6EVhp.png?auto=compress",
+    },
+    {
+      property: "og:description",
+      content: "React, umijs, tailwindcss, antd template",
+    },
+    {
+      property: "og:url",
+      href: "https://react-umijs.vercel.app",
+    },
+    {
+      property: "og:site_name",
+      href: "Hashnode",
+    },
+  ],
+  links: [
+    {
+      rel: "canonical",
+      href: "https://react-umijs.vercel.app",
     },
   ],
   nodeModulesTransform: { type: "none" },

@@ -12,12 +12,7 @@ export const request: RequestConfig = {
   redirect: "manual",
   requestInterceptors: [
     (url, options) => {
-      console.log(
-        `Func: process.env - PARAMS: process.env`,
-        process.env,
-        API_URL,
-      );
-
+      // @ts-ignore:next-line
       const apiURL =
         process.env.NODE_ENV === "development" ? url : API_URL + url;
       return {
