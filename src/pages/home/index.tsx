@@ -28,8 +28,8 @@ function IndexPage() {
   );
 
   useEffect(() => {
-    getFeeds(page);
-  }, []);
+    getFeeds(1);
+  }, [getFeeds]);
 
   const loadMoreFeed = () => {
     if (effects["home/getFeeds"]) {
