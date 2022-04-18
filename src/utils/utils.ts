@@ -8,9 +8,10 @@ const currency: { [key in keyCurrency]: string } = {
 };
 
 export function formatMoney(number: number) {
-  return new Intl.NumberFormat(getLocale(), {
+  const locale = getLocale();
+  return new Intl.NumberFormat(locale, {
     style: "currency",
-    currency: currency[getLocale() as keyCurrency],
+    currency: currency[locale as keyCurrency],
   }).format(number);
 }
 

@@ -18,6 +18,9 @@ export default defineConfig({
     ie: 11,
   },
   routes,
+  dynamicImport: {
+    loading: "@ant-design/pro-layout/es/PageLoading",
+  },
   fastRefresh: {},
   title: "React, umijs, tailwindcss, antd",
   metas: [
@@ -75,4 +78,8 @@ export default defineConfig({
     NODE_ENV,
   },
   favicon: "/favicon.png",
+  ssr: {
+    forceInitial: true,
+    mode: "string",
+  },
 });

@@ -12,7 +12,12 @@ export const ArticleItem = (props: IFeed) => {
     <article className="p-5 space-y-4 border-solid border-slate-200">
       <div className="flex items-center space-x-2">
         <div className="text-sm font-medium rounded-full border border-solid border-slate-200 leading-3 flex overflow-hidden">
-          <Avatar src={author.photo} size={40} icon={<UserOutlined />} />
+          <Avatar
+            src={author.photo}
+            size={40}
+            icon={<UserOutlined />}
+            alt={author.name}
+          />
         </div>
         <div className="flex flex-col leading-snug">
           <div className="text-sm font-medium text-current hover:text-current">
@@ -34,6 +39,7 @@ export const ArticleItem = (props: IFeed) => {
               src={coverImage}
               alt={title}
               className="rounded-md aspect-video object-cover"
+              loading={"lazy"}
             />
           </div>
         )}
