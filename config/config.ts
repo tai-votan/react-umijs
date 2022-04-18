@@ -82,4 +82,5 @@ export default defineConfig({
     forceInitial: true,
     mode: "string",
   },
+  exportStatic: {},
 });

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import type { IGetInitialProps } from "umi";
 import { useDispatch } from "umi";
 import classNames from "classnames";
 import { Skeleton } from "antd";
@@ -89,5 +90,13 @@ function IndexPage() {
     </>
   );
 }
+
+IndexPage.getInitialProps = (async () => {
+  return Promise.resolve({
+    data: {
+      title: "Hello World",
+    },
+  });
+}) as IGetInitialProps;
 
 export default IndexPage;
