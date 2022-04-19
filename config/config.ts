@@ -1,7 +1,7 @@
 import { defineConfig } from "umi";
 import routes from "./routes";
 
-const { API_URL, NODE_ENV } = process.env;
+const { API_URL, NODE_ENV, UMI_ENV } = process.env;
 
 export default defineConfig({
   hash: true,
@@ -41,6 +41,7 @@ export default defineConfig({
       content: "React, umijs, tailwindcss, antd template",
     },
     {
+      // @ts-ignore:next-line
       property: "og:type",
       content: "website",
     },
@@ -76,11 +77,34 @@ export default defineConfig({
   define: {
     API_URL,
     NODE_ENV,
+    UMI_ENV,
   },
+  esbuild: {},
   favicon: "/favicon.png",
   ssr: {
     forceInitial: true,
-    mode: "string",
   },
   exportStatic: {},
+  chunks: ["umi"],
+  chainWebpack: function (config) {
+    config.merge({
+      optimization: {
+        splitChunks: {
+          chunks: "async",
+          minSize: 30000,
+          minChunks: 3,
+          automaticNameDelimiter: ".",
+          cacheGroups: {
+            vendor: {
+              name: "vendors",
+              test({ resource }: any) {
+                return /[\\/]node_modules[\\/]/.test(resource);
+              },
+              priority: 10,
+            },
+          },
+        },
+      },
+    });
+  },
 });

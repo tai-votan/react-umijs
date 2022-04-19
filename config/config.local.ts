@@ -1,5 +1,4 @@
 import { defineConfig } from "umi";
-import routes from "./routes";
 
 const { API_URL } = process.env;
 

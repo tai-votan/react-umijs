@@ -1,8 +1,19 @@
 import React from "react";
+import type { Location } from "umi";
 import { Header } from "@/components/app";
+import ROUTES from "@/../config/routes.const";
 
-const MainLayout: React.FC = (props) => {
-  const { children } = props;
+interface Props {
+  location: Location;
+}
+
+const MainLayout: React.FC<Props> = (props) => {
+  const { children, location } = props;
+  const routesApp = Object.values(ROUTES);
+
+  if (!routesApp.includes(location.pathname)) {
+    return <>{children}</>;
+  }
   return (
     <div className="bg-slate-50 min-h-screen">
       <Header />
