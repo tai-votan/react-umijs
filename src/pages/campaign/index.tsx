@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import type { IGetInitialProps} from "umi";
+import type { IGetInitialProps } from "umi";
 import { Helmet, useParams, request } from "umi";
 import type { IPost } from "@/models/post";
 
@@ -48,9 +48,7 @@ Campaign.getInitialProps = (async (ctx) => {
       params: { campaign },
     },
   } = ctx;
-  const res = await request(
-    `https://jsonplaceholder.typicode.com/posts/${campaign}`,
-  );
+  const res = await request(`/posts/${campaign}`);
   return {
     postDetails: res,
   };
