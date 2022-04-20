@@ -85,26 +85,4 @@ export default defineConfig({
     forceInitial: true,
   },
   exportStatic: {},
-  chunks: ["umi"],
-  chainWebpack: function (config) {
-    config.merge({
-      optimization: {
-        splitChunks: {
-          chunks: "async",
-          minSize: 30000,
-          minChunks: 3,
-          automaticNameDelimiter: ".",
-          cacheGroups: {
-            vendor: {
-              name: "vendors",
-              test({ resource }: any) {
-                return /[\\/]node_modules[\\/]/.test(resource);
-              },
-              priority: 10,
-            },
-          },
-        },
-      },
-    });
-  },
 });

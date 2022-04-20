@@ -1,8 +1,8 @@
+import titlePage from "./en-US/title-page";
+
 export default {
-  antd: "routes en",
-  "site.title": "English Title",
-  "Search for tags, people, articles, and many more":
-    "Search for tags, people, articles, and many more",
+  ...titlePage,
+  "Search for tags, people, articles": "Search for tags, people, articles...",
   one: "{view} view",
   other: "{view} views",
 };

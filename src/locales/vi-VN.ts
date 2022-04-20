@@ -1,8 +1,8 @@
+import titlePage from "./vi-VN/title-page";
+
 export default {
-  antd: "routes vi",
-  "site.title": "Site-Title",
-  "Search for tags, people, articles, and many more":
-    "Tìm kiếm thẻ, người, bài báo và nhiều hơn nữa",
+  ...titlePage,
+  "Search for tags, people, articles": "Tìm kiếm thẻ, người, bài báo...",
   one: "{view} lượt xem",
   other: "{view} lượt xem",
 };

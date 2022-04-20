@@ -3,6 +3,7 @@ import { Link, SelectLang } from "umi";
 import { Avatar, Space } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { Input } from "@/components/common";
+import routesConfig from "../../../../config/routes.const";
 
 export const Header = () => {
   return (
@@ -26,14 +27,14 @@ export const Header = () => {
             </Link>
           </div>
           <div className="col-span-4 xl:col-span-5">
-            <Input
-              placeholderId={"Search for tags, people, articles, and many more"}
-            />
+            <Input placeholderId={"Search for tags, people, articles"} />
           </div>
           <div className="col-span-2 flex justify-end">
             <Space direction={"horizontal"}>
               <SelectLang />
-              <Avatar size={42} icon={<UserOutlined />} />
+              <Link to={routesConfig.login}>
+                <Avatar size={42} icon={<UserOutlined />} />
+              </Link>
             </Space>
           </div>
         </div>

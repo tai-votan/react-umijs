@@ -18,15 +18,15 @@ export default [
         component: "@/pages/home",
       },
       {
-        component: "@/pages/home",
         routes: [
           {
-            path: ROUTES.user,
-            title: "site.user",
-            component: "@/pages/home",
+            path: ROUTES.login,
+            title: "site.login",
+            component: "@/pages/login",
           },
           ...route404,
         ],
+        ...route404,
       },
       ...route404,
     ],
