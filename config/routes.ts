@@ -16,7 +16,6 @@ export default [
         path: ROUTES.index,
         title: "site.title",
         component: "@/pages/home",
-        redirect: `${ROUTES.product}/comment`,
       },
       {
         path: "/login",

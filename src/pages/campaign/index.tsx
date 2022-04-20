@@ -1,22 +1,16 @@
-import React, { useEffect, useMemo } from "react";
-import { Helmet, useParams, useDispatch } from "umi";
-import { useAppSelector } from "@/hooks";
+import React, { useMemo } from "react";
+import type { IGetInitialProps} from "umi";
+import { Helmet, useParams, request } from "umi";
+import type { IPost } from "@/models/post";
 
-const Product = () => {
+interface ICampaign {
+  postDetails: IPost;
+}
+
+const Campaign = (props: ICampaign) => {
   const { campaign } = useParams<{ campaign: string }>();
-  console.log(`Func: Product - PARAMS: campaign`, campaign);
-  const dispatch = useDispatch();
-  const {
-    post: { postDetails },
-  } = useAppSelector(({ post }) => ({ post }));
-  console.log(`Func: Product - PARAMS: postDetails`, postDetails);
-
-  useEffect(() => {
-    dispatch({
-      type: "post/getPost",
-      payload: campaign,
-    });
-  }, [campaign]);
+  const { postDetails = {} as IPost } = props;
+  console.log(`Func: Campaign - PARAMS: props`, props);
 
   const seoData = useMemo(
     () => ({
@@ -48,4 +42,18 @@ const Product = () => {
   );
 };
 
-export default Product;
+Campaign.getInitialProps = (async (ctx) => {
+  const {
+    match: {
+      params: { campaign },
+    },
+  } = ctx;
+  const res = await request(
+    `https://jsonplaceholder.typicode.com/posts/${campaign}`,
+  );
+  return {
+    postDetails: res,
+  };
+}) as IGetInitialProps;
+
+export default Campaign;

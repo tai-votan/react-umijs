@@ -1,7 +1,7 @@
 import { getPost } from "@/services/post";
 import type { Effect, Reducer } from "umi";
 
-interface IPost {
+export interface IPost {
   userId: number;
   id: number;
   title: string;

@@ -25,6 +25,7 @@ const Login = () => {
         <meta property="og:image" content={seoData.thumbnail} />
         <meta property="og:type" content="website" />
       </Helmet>
+      <div>title: {seoData.title}</div>
     </div>
   );
 };
