@@ -50,6 +50,9 @@ Campaign.getInitialProps = (async (ctx) => {
     },
   } = ctx;
   const res = await request(`/posts/${campaign}`);
+
+  console.log(`Func: res - PARAMS: res`, res);
+
   return {
     postDetails: res,
   };

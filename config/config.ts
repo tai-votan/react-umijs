@@ -84,5 +84,5 @@ export default defineConfig({
   ssr: {
     forceInitial: true,
   },
-  // exportStatic: {},
+  exportStatic: {},
 });

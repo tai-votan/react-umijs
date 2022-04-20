@@ -13,6 +13,7 @@ export const request: RequestConfig = {
   requestInterceptors: [
     (url, options) => {
       const isDev = process.env.NODE_ENV === "development";
+      console.log(`Func: isDev - PARAMS: isDev`, isDev);
       // @ts-ignore:next-line
       const apiURL = isDev ? url : API_URL + url;
       return {
