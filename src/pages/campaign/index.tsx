@@ -43,6 +43,7 @@ const Campaign = (props: ICampaign) => {
 };
 
 Campaign.getInitialProps = (async (ctx) => {
+  console.log(`Func: ctx - PARAMS: ctx`, ctx);
   const {
     match: {
       params: { campaign },
