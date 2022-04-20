@@ -34,7 +34,7 @@ const Product = () => {
         <title>{seoData.title}</title>
         <link
           rel="canonical"
-          href="https://react-umijs.vercel.app/c/campaign"
+          href={`https://react-umijs.vercel.app/c/${campaign}`}
         />
         <meta property="description" content={seoData.description} />
         <meta property="og:description" content={seoData.description} />
@@ -42,6 +42,8 @@ const Product = () => {
         <meta property="og:image" content={seoData.thumbnail} />
         <meta property="og:type" content="website" />
       </Helmet>
+      <div>title: {seoData.title}</div>
+      <div>description: {seoData.description}</div>
     </div>
   );
 };
