@@ -16,13 +16,27 @@ export default [
         path: ROUTES.index,
         title: "site.title",
         component: "@/pages/home",
+        redirect: `${ROUTES.product}/comment`,
       },
       {
+        path: "/login",
         routes: [
           {
             path: ROUTES.login,
             title: "site.login",
             component: "@/pages/login",
+          },
+          ...route404,
+        ],
+        ...route404,
+      },
+      {
+        path: "/c",
+        routes: [
+          {
+            path: "/c/:campaign",
+            title: "site.campaign",
+            component: "@/pages/campaign",
           },
           ...route404,
         ],

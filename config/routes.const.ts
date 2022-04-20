@@ -3,4 +3,6 @@ export default {
   login: "/login",
   user: "/user",
   userId: "/user",
+  product: "/c",
+  productDetails: "/c/:product",
 };
